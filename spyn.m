@@ -6,10 +6,16 @@ motors = 'AB'
 pick = 'D'
 dt = 30
 
+
+
 while 1
 
     brick.MoveMotor(motors, fwspeed);
 
+    touch = brick.TouchPressed(1);
+    color = brick.ColorCode(2);
+    distance = brick.UltrasonicDist(3);
+    
     if distance > dt
         brick.StopMotor(motors, 'Coast');
         brick.MoveMotor('A', -30);
