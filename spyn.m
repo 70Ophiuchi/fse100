@@ -3,7 +3,6 @@ global key
 fwspeed = -40
 bwspeed = 40
 motors = 'AB'
-pick = 'D'
 dt = 30
 
 while 1
