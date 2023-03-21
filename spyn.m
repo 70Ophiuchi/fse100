@@ -1,9 +1,9 @@
 global key
 
-fwspeed = -40
-bwspeed = 40
-motors = 'AB'
-dt = 30
+fwspeed = -40;
+bwspeed = 40;
+motors = 'AB';
+dt = 30;
 
 while 1
 
