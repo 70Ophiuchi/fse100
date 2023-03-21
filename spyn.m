@@ -1,4 +1,9 @@
+clearvars -except brick
+
 global key
+
+brick = ConnectBrick('H')
+brick.SetColorMode(2, 2);
 
 fwspeed = -40;
 bwspeed = 40;
