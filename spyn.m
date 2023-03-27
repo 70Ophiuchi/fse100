@@ -1,20 +1,18 @@
-clearvars -except brick
-
 global key
 
-brick = ConnectBrick('H')
-brick.SetColorMode(2, 2);
 
 fwspeed = -40;
 bwspeed = 40;
 motors = 'AB';
 dt = 30;
+turning_del = 1.8;
+
 
 while 1
 
     brick.MoveMotor(motors, fwspeed);
 
-    touch = brick.TouchPressed(1);
+    touch = brick.TouchPressed(4);
     color = brick.ColorCode(2);
     distance = brick.UltrasonicDist(3);
 
@@ -22,7 +20,7 @@ while 1
         brick.StopMotor(motors, 'Coast');
         brick.MoveMotor('A', -30);
         brick.MoveMotor('B', 10);
-        pause(2)
+        pause(turning_del);
         brick.StopMotor(motors, 'Coast');
         brick.MoveMotor(motors, fwspeed);
     end
@@ -35,9 +33,9 @@ while 1
         brick.StopMotor(motors, 'Coast');
         brick.MoveMotor('A', 10);
         brick.MoveMotor('B', -30);
-        pause(2);
+        pause(turning_del);
         brick.StopMotor(motors, 'Coast');
-        brcik.MoveMotor(motors, fwspeed);
+        brick.MoveMotor(motors, fwspeed);
     end
 
     if color == 5
